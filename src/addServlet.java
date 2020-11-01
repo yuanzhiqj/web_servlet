@@ -17,17 +17,16 @@ public class addServlet extends HttpServlet {
         String a = request.getParameter("a");
         String b = request.getParameter("b");
         PrintWriter writer = response.getWriter();
-        String flag = (String)request.getSession().getAttribute("loginFlag");
-        System.out.println(flag);
+
         writer.println("<html>");
         writer.println("<body>");
-        if(flag==null || !flag.equals("True") ) {
+        /*if(flag==null || !flag.equals("True") ) {
             System.out.println("Enter");
             writer.println("<p>please login</p>");
             writer.println("</body>");
             writer.println("</html>");
             response.sendRedirect(request.getContextPath() + "/login.html");
-        }
+        }*/
         if(a == null || b == null || !isNum(a) || !isNum(b))
             writer.println("<p>error parameters!</p>");
         else{
